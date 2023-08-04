@@ -7,13 +7,17 @@ var colorSelected = document.querySelector("#colorSelected");
 checkbox.disabled = true;
 submit_Button.disabled = true;
 
+elements = Array.from(elements);
+shuffleArray(elements);
+
 elements.forEach((element) => {
   const color = getRandomcolor();
   element.style.backgroundColor = color;
   element.color = color;
-  colorSelected.innerHTML = color;
-  colorSelected.style.backgroundColor =color;
 });
+
+colorSelected.innerHTML = elements[0].color;
+  colorSelected.style.backgroundColor = elements[0].color;
 
 function getRandomcolor() {
   const letter = "0123456789ABCDEF";
@@ -22,6 +26,13 @@ function getRandomcolor() {
     color += letter[Math.floor(Math.random() * 16)];
   }
   return color;
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
 // if statement
