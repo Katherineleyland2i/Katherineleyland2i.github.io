@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Not a robot</title>
+  </head>
+  <body>
+    <script> 
+      document.addEventListener('contextmenu', event=> event.preventDefault()); 
+      document.onkeydown = function(e) { 
+      if(event.keyCode == 123) { 
+      return false; 
+      } 
+      if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){ 
+      return false; 
+      } 
+      if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){ 
+      return false; 
+      } 
+      if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){ 
+      return false; 
+      } 
+      } 
+      </script> 
+    <div class="container">
+      <form action="success.html">
+        <h1>Match color <span id="colorSelected"></span> for verification</h1>
+        <div class="checkbox">
+          <label
+            ><input type="checkbox" name="checkbox" id="checkbox" /> Confirmed Human</label
+          >
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    <main class="container-fluid Select">
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
+      <div class="element"></div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
